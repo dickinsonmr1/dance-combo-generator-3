@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Generate Combo</h1>
+
+<p>This component demonstrates fetching dance moves from a CSV.</p>
+
+<p *ngIf="!moves"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="moves">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Move Family</th>
+      <th>Move Type</th>
+      <th>Number of Beats</th>
+      <th>Difficulty Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let move of moves">
+      <td>{{ move.id }}</td>
+      <td>{{ move.name }}</td>
+      <td>{{ move.moveFamily }}</td>
+      <td>{{ move.moveType }}</td>
+      <td>{{ move.numberOfBeats }}</td>
+      <td>{{ move.difficultyLevel }}</td>
+    </tr>
+  </tbody>
+</table>
