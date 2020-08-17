@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+// https://www.talkingdotnet.com/bind-select-dropdown-list-in-angular-8/
+
 @Component({
   selector: 'app-generate-combo',
   templateUrl: './generate-combo.component.html'
