@@ -4,7 +4,21 @@
 
 <p *ngIf="!moves"><em>Loading...</em></p>
 
-<button>Generate</button>
+<button (click)="getMoves()">Generate</button>
+<label>Number of moves:</label>
+<select (change)="setNumberOfMoves($event.target.value)">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<label>Max difficulty:</label>
+<select (change)="filterCombosByMaxDifficulty($event.target.value)">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="moves">
   <thead>
     <tr>
