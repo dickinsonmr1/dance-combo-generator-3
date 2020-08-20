@@ -28,8 +28,6 @@ namespace AngularDanceCombo.Controllers
             var dataStore = new CsvDataStore();
             //var moves = dataStore.GenerateCombo(numMoves, difficulty);
             var moves = dataStore.GetAllMoves();
-            //model = new RandomModel { Moves = moves };
-
             return moves.ToArray();
         }
     }

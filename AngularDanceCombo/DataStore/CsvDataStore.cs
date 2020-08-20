@@ -16,8 +16,12 @@ namespace AngularDanceCombo.DataStore
         {
             using var reader = new StreamReader("DataStore\\Balboa moves - 2.csv");
             using var csv = new CsvReader(reader);
+            csv.Configuration.WillThrowOnMissingField = false;
             
-            return csv.GetRecords<Move>().ToList();
+            var temp = csv.GetRecords<Move>().ToList();
+            temp.ForEach(x => x.MoveFamilyDescription = x.MoveFamily.ToString());
+            temp.ForEach(x => x.MoveTypeDescription = x.MoveType.ToString());
+            return temp;
         }
 
         public List<Move> GenerateCombo(int numMoves, int difficulty)

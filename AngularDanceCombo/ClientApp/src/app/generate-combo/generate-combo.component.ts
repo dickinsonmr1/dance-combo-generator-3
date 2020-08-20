@@ -20,7 +20,7 @@ export class GenerateComboComponent {
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<Move[]>(baseUrl + 'generatecombo').subscribe(result => {
       this.allMoves = result;
-      this.moves = this.allMoves;
+      this.moves = new Array<Move>();
     }, error => console.error(error));
   }
 
@@ -60,8 +60,10 @@ interface Move {
   */
   id: string;
   name: string;
-  moveFamily: string;
+  moveFamily: number;
+  moveFamilyDescription: string;
   moveType: number;
+  moveTypeDescription: string;
   numberOfBeats: number;
   difficultyLevel: number;
 }

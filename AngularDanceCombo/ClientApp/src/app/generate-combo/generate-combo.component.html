@@ -2,23 +2,27 @@
 
 <p>This component demonstrates fetching dance moves from a CSV.</p>
 
-<p *ngIf="!moves"><em>Loading...</em></p>
 
-<button (click)="getMoves()">Generate</button>
-<label>Number of moves:</label>
-<select (change)="setNumberOfMoves($event.target.value)">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select>
-<label>Max difficulty:</label>
-<select (change)="filterCombosByMaxDifficulty($event.target.value)">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select>
+<p>
+  <label>Number of moves:</label>
+  <select class="form-control form-control-lg" (change)="setNumberOfMoves($event.target.value)">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+</p>
+<p>
+  <label>Max difficulty:</label>
+  <select class="form-control form-control-lg" (change)="filterCombosByMaxDifficulty($event.target.value)">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+</p>
+<button class="btn btn-primary btn-lg btn-block" (click)="getMoves()">Generate</button>
+<p *ngIf="!moves"><em>Loading...</em></p>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="moves">
   <thead>
     <tr>
@@ -34,8 +38,8 @@
     <tr *ngFor="let move of moves">
       <td>{{ move.id }}</td>
       <td>{{ move.name }}</td>
-      <td>{{ move.moveFamily }}</td>
-      <td>{{ move.moveType }}</td>
+      <td>{{ move.moveFamilyDescription }}</td>
+      <td>{{ move.moveTypeDescription }}</td>
       <td>{{ move.numberOfBeats }}</td>
       <td>{{ move.difficultyLevel }}</td>
     </tr>

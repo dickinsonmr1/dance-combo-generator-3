@@ -38,7 +38,9 @@ namespace AngularDanceCombo.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public MoveFamily? MoveFamily { get; set; }
+        public string MoveFamilyDescription { get; set; }
         public MoveType? MoveType { get; set; }
+        public string MoveTypeDescription { get; set; }
         public int? NumberOfBeats { get; set; }
         public int? DifficultyLevel { get; set; }
     }
