@@ -2,28 +2,21 @@
 
 <p>This component demonstrates fetching dance moves from a CSV.</p>
 
-
 <p>
   <label>Number of moves:</label>
   <select class="form-control form-control-lg" (change)="setNumberOfMoves($event.target.value)">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
+    <option *ngFor="let i of numberOfMovesOptions;" value="{{i}}" [selected]="i === 1">{{ i }}</option>
   </select>
 </p>
 <p>
   <label>Max difficulty:</label>
   <select class="form-control form-control-lg" (change)="filterCombosByMaxDifficulty($event.target.value)">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
+    <option *ngFor="let i of maxDifficultyOptions;" value="{{i}}" [selected]="i === 1">{{ i }}</option>
   </select>
 </p>
 <button class="btn btn-primary btn-lg btn-block" (click)="getMoves()">Generate</button>
-<p *ngIf="!moves"><em>Loading...</em></p>
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="moves">
+<p *ngIf="!allMoves"><em>Loading...</em></p>
+<table class='table table-striped table-borderless table-hover' aria-labelledby="tableLabel" *ngIf="moves">
   <thead>
     <tr>
       <th>Id</th>

@@ -11,8 +11,8 @@ export class GenerateComboComponent {
   public allMoves: Move[];
   public moves: Move[];
 
-  //public difficultyOptions: number[] = [1, 2, 3, 4];
-  //public Options: number[] = [1, 2, 3, 4];
+  public numberOfMovesOptions: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
+  public maxDifficultyOptions: number[] = [1, 2, 3, 4, 5];
 
   public numberOfMoves: number = 1;
   public maxDifficulty: number = 1;
